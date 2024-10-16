@@ -1,0 +1,61 @@
+{
+  setGrid 4 4 (Color 50 50 50)
+
+  a = Pixel 0 0 (Color 255 0 0)
+
+  b = Pixel 1 1 (Color 0 255 0)
+
+  a = Pixel 0 0 (Color 0 0 255)
+
+  c = Group a
+
+  addToGroup c b
+
+  pause 2000
+
+  show c
+
+  pause 2000
+
+  hide c 
+
+  pause 2000
+
+  shift c 2 2
+
+  show c  
+
+  i = 1
+
+  print i
+
+  print (i == 1)
+
+  print (i == 0)
+
+  print (i < 0)
+
+  print (i < 2)
+  
+  print (i > 3)
+
+  print (i > 0)
+  
+  print (i != 0)
+
+  print (i != 1)
+
+  i = i + 1
+
+  print i
+
+  while (i < 5) 
+  {
+
+    print 5
+
+    i = i + 1
+
+  }
+  
+}

@@ -1,0 +1,48 @@
+{   
+    drawImage 10 10 (Color 150 150 150)
+
+    c = imageFromDrawing 0 0 (Color 0 255 0)
+
+    setGrid 100 100 (Color 0 0 0)
+
+    a = randInt 5 10
+
+    b = randInt 5 10
+
+    vX = a
+
+    vY = b
+
+    length = (sqrt (   (vX * vX) + (vY * vY)   ))
+    
+    while (true)
+    {
+
+    while (isInside c 100 100)
+    {
+        show c
+
+        pause 100
+
+        hide c
+
+        shift c vX vY
+    }
+
+    shift c (0 - vX) (0 - vY)
+
+    vX = randInt (0 - 10) 10
+
+    vY = randInt (0 - 10) 10
+
+
+    while (  (abs ((sqrt (   (vX * vX) + (vY * vY)   )) - length))  > 1 ) 
+    {        
+        vX = randInt (0 - 10) 10
+
+        vY = randInt (0 - 10) 10
+    }
+
+        
+    }
+}

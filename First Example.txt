@@ -1,0 +1,58 @@
+{   
+    drawImage 10 10 (Color 150 150 150)
+
+    pixelGroup1 = imageFromDrawing 0 0 (Color 0 255 0)
+
+    drawImage 20 20 (Color 255 0 255)
+
+    pixelGroup2 = imageFromDrawing 10 10 (Color 0 0 255)
+
+    singlePixel = Pixel 30 30 (Color 255 255 255)
+
+    addToGroup pixelGroup1 pixelGroup2
+
+    addToGroup pixelGroup1 singlePixel
+
+    setGrid 100 100 (Color 0 0 0)
+
+    a = randInt 5 10
+
+    b = randInt 5 10
+
+    vX = a
+
+    vY = b
+
+    length = (sqrt (   (vX * vX) + (vY * vY)   ))
+    
+    while (true)
+    {
+
+    while (isInside pixelGroup1 100 100)
+    {
+        show pixelGroup1
+
+
+        pause 100
+
+        hide pixelGroup1
+
+        shift pixelGroup1 vX vY
+    }
+
+    shift pixelGroup1 (0 - vX) (0 - vY)
+
+    vX = randInt (0 - 10) 10
+
+    vY = randInt (0 - 10) 10
+
+
+    while (  (abs ((sqrt (   (vX * vX) + (vY * vY)   )) - length))  > 1 ) 
+    {        
+        vX = randInt (0 - 10) 10
+
+        vY = randInt (0 - 10) 10
+    }
+    }
+}
+

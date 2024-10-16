@@ -1,0 +1,12 @@
+{
+    drawImage 10 10 (Color 150 150 150)
+
+    setGrid 30 30 (Color 0 0 0)
+
+    c = imageFromDrawing 10 10 (Color 255 255 255)
+
+    pause 0
+    
+    show c
+
+}

@@ -1,0 +1,68 @@
+{   
+    setGrid 500 500 (Color 0 0 0)
+
+    c = newGroup
+
+    i = 0
+
+    j = 0
+
+    ballCol = Color (randInt 0 255) (randInt 0 255) (randInt 0 255)
+
+    while (i < 30) 
+    {
+        while (j < 30) 
+        {
+            addToGroup c (Pixel i j ballCol)
+
+            j = j + 1
+
+        }
+
+        j = 0
+
+        i = i + 1
+
+    }
+
+    a = randInt 20 40
+
+    b = randInt 20 40
+
+    vX = a
+
+    vY = b
+
+    length = (sqrt (   (vX * vX) + (vY * vY)   ))
+    
+    while (true)
+    {
+
+    while (isInside c 500 500)
+    {
+        show c
+
+        pause 100
+
+        hide c
+
+        shift c vX vY
+    }
+
+    shift c (0 - vX) (0 - vY)
+
+    vX = randInt (0 - 40) 40
+
+    vY = randInt (0 - 40) 40
+
+
+    while (  (abs ((sqrt (   (vX * vX) + (vY * vY)   )) - length))  > 1 ) 
+    {        
+        vX = randInt (0 - 40) 40
+
+        vY = randInt (0 - 40) 40
+    }
+
+        
+    }
+}
